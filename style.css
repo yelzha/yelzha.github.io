@@ -1,0 +1,135 @@
+:root {
+  --bg: #fbfbf9;
+  --surface: #ffffff;
+  --text: #1d1d1f;
+  --muted: #5f6368;
+  --border: #e3e3df;
+  --accent: #1f5fae;
+  --accent-soft: #e8f0fa;
+  --mark: #fff4d6;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #131416;
+    --surface: #1b1c1f;
+    --text: #e8e8e6;
+    --muted: #a0a3a8;
+    --border: #2c2e33;
+    --accent: #79aef0;
+    --accent-soft: #1d2a3b;
+    --mark: #3a3220;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+main {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 48px 20px 32px;
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+h1 { font-size: 2rem; line-height: 1.2; margin: 0 0 6px; letter-spacing: -0.01em; }
+h2 {
+  font-size: 1.15rem;
+  margin: 40px 0 14px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+}
+h3 { font-size: 0.95rem; margin: 22px 0 10px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; }
+
+/* Intro */
+.intro { display: flex; gap: 28px; align-items: center; }
+.photo {
+  width: 160px; height: 160px; flex: none;
+  border-radius: 50%; object-fit: cover;
+  border: 1px solid var(--border);
+}
+.role { margin: 0 0 14px; color: var(--muted); }
+.links { display: flex; flex-wrap: wrap; gap: 8px; }
+.links a {
+  font-size: 0.875rem;
+  padding: 4px 11px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+}
+.links a:hover { background: var(--accent-soft); text-decoration: none; }
+
+/* News */
+.news { list-style: none; padding: 0; margin: 0; }
+.news li { display: flex; gap: 16px; padding: 3px 0; }
+.news time, .timeline time {
+  flex: none; width: 92px;
+  color: var(--muted); font-size: 0.9rem;
+  font-variant-numeric: tabular-nums;
+  padding-top: 1px;
+}
+
+/* Interests */
+.tags { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.tags li { background: var(--accent-soft); border-radius: 6px; padding: 3px 10px; font-size: 0.9rem; }
+
+/* Publications */
+.pubs { padding-left: 1.4em; margin: 0; }
+.pubs li { margin-bottom: 14px; padding-left: 4px; }
+.pubs .title { display: block; font-weight: 600; }
+.pubs .authors, .pubs .venue { display: block; font-size: 0.92rem; }
+.pubs .authors { color: var(--muted); }
+.pubs .authors b { color: var(--text); }
+.pubs .venue { font-style: italic; }
+.pubs .note { font-style: normal; color: var(--muted); }
+.pubs .plinks { display: inline-flex; gap: 10px; font-size: 0.875rem; margin-top: 2px; }
+.pubs .highlight { background: var(--mark); border-radius: 3px; padding: 0 4px; font-style: normal; font-size: 0.85rem; }
+.pubs.compact li { margin-bottom: 9px; }
+.pubs.compact .title { font-weight: 500; }
+.more { color: var(--muted); font-size: 0.92rem; }
+
+/* Projects */
+.grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 16px;
+}
+.card h4 { margin: 0 0 4px; font-size: 1rem; }
+.card p { margin: 0 0 8px; font-size: 0.92rem; }
+.card .tech { color: var(--muted); font-size: 0.82rem; margin: 0; }
+.card .cl { font-size: 0.875rem; display: flex; gap: 12px; margin-top: 6px; }
+
+/* Experience */
+.timeline { list-style: none; padding: 0; margin: 0; }
+.timeline li { display: flex; gap: 16px; padding: 4px 0; }
+.timeline span { color: var(--muted); }
+
+footer {
+  margin-top: 48px; padding-top: 14px;
+  border-top: 1px solid var(--border);
+  color: var(--muted); font-size: 0.85rem;
+}
+
+@media (max-width: 640px) {
+  main { padding: 32px 16px 24px; }
+  .intro { flex-direction: column; text-align: center; gap: 16px; }
+  .links { justify-content: center; }
+  .photo { width: 132px; height: 132px; }
+  h1 { font-size: 1.7rem; }
+  .grid { grid-template-columns: 1fr; }
+  .news li, .timeline li { flex-direction: column; gap: 0; }
+  .news li { padding: 5px 0; }
+  .news time, .timeline time { width: auto; }
+}
