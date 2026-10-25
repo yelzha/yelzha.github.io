@@ -54,8 +54,9 @@ h3 { font-size: 0.95rem; margin: 22px 0 10px; color: var(--muted); font-weight: 
 /* Intro */
 .intro { display: flex; gap: 28px; align-items: center; }
 .photo {
-  width: 160px; height: 160px; flex: none;
-  border-radius: 50%; object-fit: cover;
+  width: 150px; height: 200px; flex: none;
+  border-radius: 12px; object-fit: contain;
+  background: #fff;
   border: 1px solid var(--border);
 }
 .role { margin: 0 0 14px; color: var(--muted); }
@@ -126,7 +127,7 @@ footer {
   main { padding: 32px 16px 24px; }
   .intro { flex-direction: column; text-align: center; gap: 16px; }
   .links { justify-content: center; }
-  .photo { width: 132px; height: 132px; }
+  .photo { width: 132px; height: 176px; }
   h1 { font-size: 1.7rem; }
   .grid { grid-template-columns: 1fr; }
   .news li, .timeline li { flex-direction: column; gap: 0; }
