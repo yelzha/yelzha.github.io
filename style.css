@@ -133,3 +133,42 @@ footer {
   .news li { padding: 5px 0; }
   .news time, .timeline time { width: auto; }
 }
+
+/* Top navigation (all pages) */
+.topnav {
+  display: flex; flex-wrap: wrap; gap: 4px 18px;
+  margin: -24px 0 32px; padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.92rem;
+}
+.topnav a { color: var(--muted); }
+.topnav a[aria-current="page"] { color: var(--text); font-weight: 600; }
+.page-title { margin-bottom: 4px; }
+.lead { color: var(--muted); margin: 0 0 8px; }
+.see-all { font-size: 0.92rem; margin: 10px 0 0; }
+
+/* Experience page */
+.job { padding: 16px 0; border-bottom: 1px solid var(--border); }
+.job:last-child { border-bottom: 0; }
+.job-head { display: flex; justify-content: space-between; gap: 4px 16px; flex-wrap: wrap; }
+.job-head h3 { margin: 0; font-size: 1.05rem; color: var(--text); text-transform: none; letter-spacing: 0; }
+.job-head time { color: var(--muted); font-size: 0.9rem; font-variant-numeric: tabular-nums; }
+.job .org { margin: 2px 0 8px; color: var(--muted); font-size: 0.95rem; }
+.job ul { margin: 0; padding-left: 1.2em; }
+.job li { margin-bottom: 4px; font-size: 0.95rem; }
+.job .tech { color: var(--muted); font-size: 0.85rem; margin: 8px 0 0; }
+
+/* Certificates page */
+.cert-list { list-style: none; padding: 0; margin: 0; }
+.cert-list li { display: flex; justify-content: space-between; gap: 4px 16px; flex-wrap: wrap; padding: 6px 0; border-bottom: 1px solid var(--border); font-size: 0.95rem; }
+.cert-list li:last-child { border-bottom: 0; }
+.cert-list .meta { color: var(--muted); font-size: 0.85rem; white-space: nowrap; }
+details.provider { border: 1px solid var(--border); border-radius: 10px; background: var(--surface); padding: 10px 16px; margin-bottom: 10px; }
+details.provider summary { cursor: pointer; font-weight: 600; }
+details.provider summary span { color: var(--muted); font-weight: 400; }
+details.provider[open] summary { margin-bottom: 6px; }
+
+@media (max-width: 640px) {
+  .topnav { margin-top: -12px; justify-content: center; }
+  .cert-list .meta { white-space: normal; }
+}
